@@ -33,6 +33,11 @@
     "no idea",
     "damn bro really need a good set for more accuracy to cum",
     "nigger",
-    "."
+    ".",
+    "?ban",
+    "?kick",
+    "😡",
+    "amir",
+    "bro i got no idea for more!"
   ]
 }
