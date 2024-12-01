@@ -1,0 +1,9 @@
+return {
+    Click = "rbxassetid://4499400560",
+    Bonk = "rbxassetid://6352582283",
+    ["Minecraft Hit"] = "rbxassetid://8632670510",
+    Neverlose = "rbxassetid://6534948092",
+    Fatality = "rbxassetid://6534947869",
+    Skeet = "rbxassetid://5633695679",
+    Rust = "rbxassetid://1255040462",
+}
