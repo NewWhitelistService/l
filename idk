@@ -1,9 +1,12 @@
 return {
     Click = "rbxassetid://4499400560",
     Bonk = "rbxassetid://6352582283",
-    ["Minecraft Hit"] = "rbxassetid://8632670510",
+    Minecraft = "rbxassetid://4018616850",
     Neverlose = "rbxassetid://6534948092",
     Fatality = "rbxassetid://6534947869",
     Skeet = "rbxassetid://5633695679",
     Rust = "rbxassetid://1255040462",
+    Pop = "rbxassetid://198598793",
+    Bubble = "rbxassetid://6534947588",
+    Bruh = "rbxassetid://4578740568"
 }
