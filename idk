@@ -10,7 +10,6 @@ return {
     Bubble = { url = "rbxassetid://6534947588"},
     Bruh = { url = "rbxassetid://4275842574"},
     UwU = { url = "rbxassetid://8323804973"},
-    ["Frying Pan"] = { url = "rbxassetid://18922477538"},
     Hentai = { url = "https://github.com/NewWhitelistService/l/raw/refs/heads/main/Hrntai.wav", customasset = true },
     Hentai2 = { url = "https://github.com/NewWhitelistService/l/raw/refs/heads/main/henta01.wav", customasset = true },
 }
