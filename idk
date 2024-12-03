@@ -10,5 +10,5 @@ return {
     Bubble = "rbxassetid://6534947588",
     Bruh = "rbxassetid://4275842574",
     UwU = "rbxassetid://8323804973",
-    Pan = "rbxassetid://18922477538",
+    ["Frying Pan"] = "rbxassetid://18922477538",
 }
