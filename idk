@@ -13,4 +13,7 @@ return {
     UwU = { url = "rbxassetid://8323804973"},
     Hentai = { url = "https://github.com/NewWhitelistService/l/raw/refs/heads/main/Hrntai.wav", customasset = true },
     Hentai2 = { url = "https://github.com/NewWhitelistService/l/raw/refs/heads/main/henta01.wav", customasset = true },
+    ["Among Us Kill"] = { url = "https://github.com/NewWhitelistService/l/raw/refs/heads/main/amongus_kill.wav", customasset = true },
+    ["Apple Pay"] = { url = "https://github.com/NewWhitelistService/l/raw/refs/heads/main/applepay.wav", customasset = true },
+    ["Mario Woahh"] = { url = "https://github.com/NewWhitelistService/l/raw/refs/heads/main/mariowoahh.wav", customasset = true },
 }
