@@ -7,6 +7,7 @@ return {
     Skeet = { url = "rbxassetid://5633695679"},
     Rust = { url = "rbxassetid://1255040462"},
     Pop = { url = "rbxassetid://198598793"},
+    Bell = { url = "rbxassetid://6534947240"},
     Bubble = { url = "rbxassetid://6534947588"},
     Bruh = { url = "rbxassetid://4275842574"},
     UwU = { url = "rbxassetid://8323804973"},
