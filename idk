@@ -16,4 +16,7 @@ return {
     ["Among Us Kill"] = { url = "https://github.com/NewWhitelistService/l/raw/refs/heads/main/amongus_kill.wav", customasset = true },
     ["Apple Pay"] = { url = "https://github.com/NewWhitelistService/l/raw/refs/heads/main/applepay.wav", customasset = true },
     ["Mario Woahh"] = { url = "https://github.com/NewWhitelistService/l/raw/refs/heads/main/mariowoahh.wav", customasset = true },
+    Hentai3 = { url = "https://github.com/NewWhitelistService/l/raw/refs/heads/main/hentai1.wav", customasset = true },
+    Hentai4 = { url = "https://github.com/NewWhitelistService/l/raw/refs/heads/main/hentai2.mp3", customasset = true },
+    Hentai5 = { url = "https://github.com/NewWhitelistService/l/raw/refs/heads/main/hentai3.mp3", customasset = true },
 }
