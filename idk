@@ -19,4 +19,7 @@ return {
     Hentai3 = { url = "https://github.com/NewWhitelistService/l/raw/refs/heads/main/hentai1.wav", customasset = true },
     Hentai4 = { url = "https://github.com/NewWhitelistService/l/raw/refs/heads/main/hentai2.mp3", customasset = true },
     Hentai5 = { url = "https://github.com/NewWhitelistService/l/raw/refs/heads/main/hentai3.mp3", customasset = true },
+    Gamesense = { url = "rbxassetid://4817809188"},
+    Bameware = { url = "rbxassetid://6565367558"},
+    COD = { url = "rbxassetid://160432334"},
 }
