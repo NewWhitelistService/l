@@ -15,21 +15,11 @@ local function v7(v155, v156)
 	end
 	return v5(v157);
 end
-pcall(function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Pixeluted/adoniscries/main/Source.lua",true))()
-end)
 repeat
 	wait();
 until game:IsLoaded() 
-
-local repo = 'https://raw.githubusercontent.com/mstudio45/LinoriaLib/main/'
-local Library = loadstring(game:HttpGet(repo .. 'Library.lua'))()
-local ThemeManager = loadstring(game:HttpGet(repo .. 'addons/ThemeManager.lua'))()
-local SaveManager = loadstring(game:HttpGet(repo .. 'addons/SaveManager.lua'))()
-local Options = Library.Options
-local Toggles = Library.Toggles
-Library.ShowCustomCursor = false
-
+local v8 = loadstring(game:HttpGet("https://raw.githubusercontent.com/NewWhitelistService/l/refs/heads/main/lib"))();
 local v9 = {["RIFK7"]="rbxassetid://9102080552",["Bubble"]="rbxassetid://9102092728",["Minecraft"]="rbxassetid://5869422451",["Cod"]="rbxassetid://160432334",["Bameware"]="rbxassetid://6565367558",["Neverlose"]="rbxassetid://6565370984",["Gamesense"]="rbxassetid://4817809188",["Rust"]="rbxassetid://6565371338"};
 local v10 = {["Tech"]={["Enabled"]=false,["AutoPrediction"]=false,["AutoPredMode"]="PingBased",["APMODE"]="Calculate",["RealPart"]="HumanoidRootPart",["SelectedPart"]="HumanoidRootPart",["AirPart"]="HumanoidRootPart",["HorizontalPrediction"]=(1638.1 - (1295 + 343)),["VerticalPrediction"]=0.1,["HorizontalPrediction2"]=(0.1 - 0),["VerticalPrediction2"]=(0.1 - 0),["jumpoffset"]=(1092 - (770 + 322)),["jumpoffset2"]=-(0.21 + 0),["jumpoffset3"]=(0.28 + 0),["ShootDelay"]=(0.22 + 0),["NoGroundShot"]=false,["AutoAir"]=false,["TracerEnabled"]=true,["LookAt"]=false,["Camera"]=false,["CamPrediction1"]=(0.1 - 0),["CamPrediction2"]=(0.1 - 0),["smoothness"]=(0.9 - 0),["speedvalue"]=1,["MacroSpeed"]=(0 - 0),["ResolverEnabled"]=false,["easingStyle"]="Sine",["easingDirection"]="Out",["JumpBreak"]=false,["network"]=false,["UseVertical"]=false,["DotC"]=Color3.fromRGB(0 + 0, 0 - 0, 0 + 0)}};
 v10.Tech.SelectedPart = v10.Tech.RealPart;
@@ -404,7 +394,7 @@ local v68 = function()
 	end
 end;
 local v69 = loadstring(game:HttpGet("https://raw.githubusercontent.com/NewWhitelistService/l/refs/heads/main/bruh", true))();
-local v70 = loadstring(game:HttpGet("https://raw.githubusercontent.com/NewWhitelistService/l/refs/heads/main/bruh", true))(); --// ya i not save bad pred lol
+local v70 = loadstring(game:HttpGet("https://raw.githubusercontent.com/NewWhitelistService/l/refs/heads/main/bruh", true))();
 local v27 = game:GetService("Stats");
 local v71 = function(v169)
 	return (v169 / (13 + 987)) + (1399.037 - (653 + 746));
@@ -1135,173 +1125,6 @@ v21.Heartbeat:Connect(function()
 		end
 	end
 end);
-function lockbuttonc()
-	local v286 = 1351 - (461 + 890);
-	local v287;
-	local v288;
-	local v289;
-	local v290;
-	local v291;
-	local v292;
-	local v293;
-	while true do
-		if (v286 == (2 + 0)) then
-			v288.Parent = game.CoreGui;
-			v288.ZIndexBehavior = Enum.ZIndexBehavior.Sibling;
-			v288.ResetOnSpawn = false;
-			v289 = Instance.new("ImageButton");
-			v289.Name = "ImageButton";
-			v289.Parent = v288;
-			v286 = 11 - 8;
-		end
-		if (v286 == (244 - (19 + 224))) then
-			v287.Filled = false;
-			v287.Radius = 227 + 23;
-			v287.Position = Vector2.new(workspace.CurrentCamera.ViewportSize.X / (200 - (37 + 161)), workspace.CurrentCamera.ViewportSize.Y / (1 + 1));
-			v287.Visible = false;
-			v288 = Instance.new("ScreenGui");
-			v288.Name = "Sigmaballs";
-			v286 = 1 + 1;
-		end
-		if (5 == v286) then
-			function v292()
-				local v536;
-				local v537 = math.huge;
-				local v538 = game.Players.LocalPlayer;
-				local v539 = game:GetService("Workspace").CurrentCamera;
-				local v540 = Vector2.new(v539.ViewportSize.X / 2, v539.ViewportSize.Y / (2 + 0));
-				local v541 = v287.Radius;
-				local v542 = v539.ViewportSize;
-				for v568, v569 in pairs(game.Players:GetPlayers()) do
-					if ((v569 ~= v538) and v569.Character and v569.Character:FindFirstChild("Humanoid") and (v569.Character.Humanoid.Health > 0) and v569.Character:FindFirstChild("HumanoidRootPart")) then
-						local v633 = 61 - (60 + 1);
-						local v634;
-						local v635;
-						while true do
-							if (v633 == (923 - (826 + 97))) then
-								v634, v635 = v539:WorldToViewportPoint(v569.Character.PrimaryPart.Position);
-								if (v635 and (v634.X > (0 + 0)) and (v634.Y > (0 - 0)) and (v634.X < v542.X) and (v634.Y < v542.Y)) then
-									local v729 = (Vector2.new(v634.X, v634.Y) - v540).magnitude;
-									if ((v729 < v541) and (v729 < v537)) then
-										local v747 = 0 - 0;
-										while true do
-											if (0 == v747) then
-												v536 = v569;
-												v537 = v729;
-												break;
-											end
-										end
-									end
-								end
-								break;
-							end
-						end
-					end
-				end
-				return v536;
-			end
-			v293 = nil;
-			function v293()
-				if v16.Enabled then
-					local v595 = 685 - (375 + 310);
-					local v596;
-					while true do
-						if (v595 == (1999 - (1864 + 135))) then
-							v596 = v292();
-							if (v29 and v30) then
-								local v710 = 0 - 0;
-								while true do
-									if (v710 == 1) then
-										targetHealth = nil;
-										game.Players.LocalPlayer.Character.Humanoid.AutoRotate = true;
-										v710 = 1 + 1;
-									end
-									if (v710 == (2 + 1)) then
-										if v16.LookAt then
-											v28.Character.Humanoid.AutoRotate = true;
-										end
-										v289.Image = "rbxassetid://140623923630784";
-										v710 = 9 - 5;
-									end
-									if (v710 == (1135 - (314 + 817))) then
-										Library:Notify("Untargeted", 2);
-										break;
-									end
-									if (0 == v710) then
-										CamTarget = nil;
-										v29 = false;
-										v710 = 1 + 0;
-									end
-									if (v710 == (216 - (32 + 182))) then
-										v30 = nil;
-										v22.CurrentCamera.CameraSubject = v28.Character.Humanoid;
-										v710 = 3;
-									end
-								end
-							elseif v596 then
-								v29 = true;
-								v30 = v596;
-								CamTarget = v596;
-								if (v30.Character and v30.Character:FindFirstChild("Humanoid")) then
-									targetHealth = v30.Character.Humanoid.Health;
-								else
-									return;
-								end
-								v289.Image = "rbxassetid://96086736054343";
-								Library:Notify("Target Locked: "..tostring(v30.DisplayName), 2);
-							else
-								Library:Notify("No target found", 2 + 0);
-							end
-							break;
-						end
-					end
-				end
-			end
-			v289.MouseButton1Click:Connect(v293);
-			v18.InputBegan:Connect(function(v543, v544)
-				if (not v544 and (v543.KeyCode == Enum.KeyCode.DPadDown)) then
-					v293();
-				end
-			end);
-			break;
-		end
-		if (v286 == (0 - 0)) then
-			if LockBut then
-				local v570 = 65 - (39 + 26);
-				while true do
-					if (v570 == (144 - (54 + 90))) then
-						Library:Notify("Already Fucking Loaded", 200 - (45 + 153));
-						return;
-					end
-				end
-			end
-			LockBut = true;
-			v287 = Drawing.new("Circle");
-			v287.Transparency = 0.5;
-			v287.Thickness = 2 + 0;
-			v287.Color = Color3.new(553 - (457 + 95), 0 + 0, 0);
-			v286 = 1 - 0;
-		end
-		if (v286 == (6 - 3)) then
-			v289.Active = true;
-			v289.Draggable = true;
-			v289.BackgroundColor3 = Color3.fromRGB(20, 20, 72 - 52);
-			v289.BackgroundTransparency = 0.5;
-			v289.Size = UDim2.new(0 + 0, 310 - 220, 0, 271 - 181);
-			v289.Image = "rbxassetid://96086736054343";
-			v286 = 752 - (485 + 263);
-		end
-		if (v286 == (711 - (575 + 132))) then
-			v289.Position = UDim2.new(861.5 - (750 + 111), -(1035 - (445 + 565)), 0.5 + 0, -25);
-			v290 = Instance.new("UICorner");
-			v290.CornerRadius = UDim.new(0.2 + 0, 0 - 0);
-			v290.Parent = v289;
-			v291 = false;
-			v292 = nil;
-			v286 = 2 + 3;
-		end
-	end
-end
 local v96 = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name;
 local v97 = os.date("%Y-%m-%d");
 local v19 = game:GetService("Players");
@@ -1312,171 +1135,53 @@ if (v98.Name == "computerplayer442") then
 elseif (v98.Name == "pzoz853") then
 	v99 = "Taco";
 end
-
-local v135 = Instance.new("ScreenGui");
-v135.Name = "Ui22";
-v135.Parent = game.CoreGui;
-v135.ZIndexBehavior = Enum.ZIndexBehavior.Sibling;
-v135.ResetOnSpawn = false;
-local v142 = Instance.new("ImageButton");
-v142.Name = "Image3";
-v142.Parent = v135;
-v142.Active = true;
-v142.Draggable = true;
-v142.BackgroundColor3 = Color3.fromRGB(1279 - (1147 + 112), 5 + 15, 40 - 20);
-v142.BackgroundTransparency = 1;
-v142.Size = UDim2.new(0, 90, 0, 24 + 66);
-v142.Image = "rbxassetid://92324433288253";
-v142.Position = UDim2.new(698 - (335 + 362), -(90 + 5), 0 - 0, 5);
-local v152 = Instance.new("UICorner");
-v152.CornerRadius = UDim.new(0.2, 0);
-v152.Parent = v142;
-v142.MouseButton1Click:Connect(function()
-Library:Toggle()
-end);
-
-local Window = Library:CreateWindow({
-    Title = 'Psalms Lite | Change Ui by doitenroi.9941',
-    Center = true,
-    AutoShow = false,
-    TabPadding = 8,
-    MenuFadeTime = 0.2
-})
-local Tabs = {
-    Target = Window:AddTab('Target'),
-    AimAssist = Window:AddTab('Aim Assist'),
-    Visual = Window:AddTab('Visual'),
-    Setting = Window:AddTab('Settings')
-}
-
-local Targeta = Tabs.Target:AddLeftGroupbox('Target')
-local btp = Tabs.Target:AddLeftGroupbox('Bullet Tp')
-local hitp = Tabs.Target:AddLeftGroupbox('Hit Part')
-local Calc = Tabs.Target:AddRightGroupbox('Calculation')
-
-local Movementa = Tabs.Setting:AddRightGroupbox('Movement')
-local locls = Tabs.Setting:AddLeftGroupbox('Load')
-local as = Tabs.Setting:AddRightGroupbox('AutoShoot')
-local hc = Tabs.Setting:AddLeftGroupbox('Hood Custom')
-
-local mainas = Tabs.AimAssist:AddLeftGroupbox('Main')
-local predas = Tabs.AimAssist:AddRightGroupbox('Prediction')
-
-local predbreak = Tabs.Visual:AddLeftGroupbox('Prediction Breaker')
-local skybox = Tabs.Visual:AddRightGroupbox('Skybox')
-local dace = Tabs.Visual:AddLeftGroupbox('Dance')
-local espa = Tabs.Visual:AddRightGroupbox('Esp')
-
-Targeta:AddToggle('idkk', {
-    Text = 'Enabled',
-    Default = false,
-    Tooltip = '',
-    Callback = function(Value)
-        v10.Tech.Enabled = Value
-    end
-})
-Targeta:AddToggle('idkk', {
-    Text = 'Look At',
-    Default = false,
-    Tooltip = '',
-    Callback = function(Value)
-        v10.Tech.LookAt = Value
-    end
-})
-Targeta:AddToggle('idkk', {
-    Text = 'View',
-    Default = false,
-    Tooltip = '',
-    Callback = function(Value)
-        v10.Tech.ViewAt = Value
-    end
-})
-Targeta:AddToggle('idkk', {
-    Text = 'Auto Air',
-    Default = false,
-    Tooltip = '',
-    Callback = function(Value)
-        v10.Tech.AutoAir = Value
-    end
-})
-Targeta:AddInput('yippe', {
-    Default = v10.Tech.ShootDelay,
-    Numeric = true,
-    Finished = true,
-
-    Text = 'Air Delay',
-    Tooltip = '',
-
-    Placeholder = v10.Tech.ShootDelay,
-
-    Callback = function(Value)
-        v65 = Value
-    end
-})
-Targeta:AddDropdown('ihdbzz', {
-    Values = {"Index","Namecall"},
-    Default = 2,
-    Multi = false,
-
-    Text = 'Lock Type',
-    Tooltip = '',
-
-    Callback = function(Value)
-         v10.Tech.LockType = Value
-    end
-})
-btp:AddToggle('idkk', {
-    Text = 'Enabled',
-    Default = false,
-    Tooltip = '',
-    Callback = function(Value)
-        v87 = Value
-    end
-})
-hitp:AddDropdown('ssshsh', {
-    Values = {"Head","UpperTorso","LowerTorso","HumanoidRootPart","LeftUpperArm","LeftLowerArm","LeftHand","RightUpperArm","RightLowerArm","RightHand","LeftUpperLeg","LeftLowerLeg","LeftFoot","RightUpperLeg","RightLowerLeg","RightFoot"},
-    Default = 4,
-    Multi = false,
-
-    Text = 'BodyPart',
-    Tooltip = '',
-
-    Callback = function(Value)
-         v10.Tech.RealPart = Value
-    end
-})
-hitp:AddDropdown('ssshsh', {
-    Values = {"Head","UpperTorso","LowerTorso","HumanoidRootPart","LeftUpperArm","LeftLowerArm","LeftHand","RightUpperArm","RightLowerArm","RightHand","LeftUpperLeg","LeftLowerLeg","LeftFoot","RightUpperLeg","RightLowerLeg","RightFoot"},
-    Default = 4,
-    Multi = false,
-
-    Text = 'Air Part',
-    Tooltip = '',
-
-    Callback = function(Value)
-         v10.Tech.AirPart = Value
-    end
-})
-Calc:AddToggle('idkk', {
-    Text = 'Division',
-    Default = false,
-    Tooltip = '',
-    Callback = function(Value)
-        v10.Tech.UseVertical = Value
-    end
-})
-Calc:AddInput('yippe', {
-    Default = 0.1,
-    Numeric = true,
-    Finished = true,
-
-    Text = 'Horizontal Prediction (X)',
-    Tooltip = '',
-
-    Placeholder = 0.1,
-
-    Callback = function(v235)
-        	local v236 = 0 - 0;
+local v100 = "#" .. v8.Accent:ToHex();
+local v101 = v8:Window({["Name"]=('Psalms.<font color="' .. v100 .. '">Tech</font> | ' .. v96 .. " | " .. v97 .. ' | <font color="' .. v100 .. '">' .. v99 .. "</font>"),["Amount"]=(7 - 3)});
+v8:SetOpen(false);
+local v102 = game.Players.LocalPlayer.Name;
+local v103 = string.sub(tostring(math.random()), 4 - 1, 8);
+local v104 = {"Slave","Master","Peasant"};
+local v105 = v104[math.random(#v104)];
+local v106 = v101:Page({["Name"]="Target"});
+local v107 = v101:Page({["Name"]="Aim Assist"});
+local v108 = v101:Page({["Name"]="Visuals"});
+local v109 = v101:Page({["Name"]="Settings"});
+local v110 = v106:Section({["Name"]="Target",["Side"]="Left",["Size"]=(43 + 137)});
+v110:Toggle({["Name"]="Enabled",["Callback"]=function(v217)
+	v10.Tech.Enabled = v217;
+end});
+v110:Toggle({["Name"]="Look At",["Callback"]=function(v219)
+	v10.Tech.LookAt = v219;
+end});
+v110:Toggle({["Name"]="View",["Callback"]=function(v221)
+	v10.Tech.ViewAt = v221;
+end});
+v110:Toggle({["Name"]="Auto Air",["Callback"]=function(v223)
+	v10.Tech.AutoAir = v223;
+end});
+v110:Textbox({["Name"]="Auto Air Delay",["Default"]=tostring(v10.Tech.ShootDelay),["Callback"]=function(v225)
+	v65 = tonumber(v225);
+end});
+v110:List({["Name"]="Lock Method",["Options"]={"Index","Namecall"},["Default"]="Namecall",["Callback"]=function(v226)
+	v10.Tech.LockType = v226;
+end});
+local v111 = v106:Section({["Name"]="Bullet TP",["Side"]="Left",["Size"]=(133 - (86 + 7))});
+v111:Toggle({["Name"]="Enabled",["Callback"]=function(v228)
+	v87 = v228;
+end});
+local v112 = v106:Section({["Name"]="Hit Part",["Side"]="Left"});
+v112:List({["Name"]="BodyPart",["Options"]={"Head","UpperTorso","LowerTorso","HumanoidRootPart","LeftUpperArm","LeftLowerArm","LeftHand","RightUpperArm","RightLowerArm","RightHand","LeftUpperLeg","LeftLowerLeg","LeftFoot","RightUpperLeg","RightLowerLeg","RightFoot"},["Default"]="HumanoidRootPart",["Callback"]=function(v229)
+	v10.Tech.RealPart = v229;
+end});
+v112:List({["Name"]="AirPart",["Options"]={"Head","UpperTorso","LowerTorso","HumanoidRootPart","LeftUpperArm","LeftLowerArm","LeftHand","RightUpperArm","RightLowerArm","RightHand","LeftUpperLeg","LeftLowerLeg","LeftFoot","RightUpperLeg","RightLowerLeg","RightFoot"},["Default"]="HumanoidRootPart",["Callback"]=function(v231)
+	v10.Tech.AirPart = v231;
+end});
+local v113 = v106:Section({["Name"]="Calculation",["Side"]="Right",["Size"]=(1210 - (352 + 458))});
+v113:Toggle({["Name"]="Division",["Default"]=false,["Callback"]=function(v233)
+	v10.Tech.UseVertical = v233;
+end});
+v113:Textbox({["Name"]="Horizontal Prediction (X)",["Default"]=(0.1 - 0),["Callback"]=function(v235)
+	local v236 = 0 - 0;
 	while true do
 		if (v236 == 0) then
 			v10.Tech.HorizontalPrediction2 = tonumber(v235) or (0.1 + 0);
@@ -1489,20 +1194,9 @@ Calc:AddInput('yippe', {
 			break;
 		end
 	end
-    end
-})
-Calc:AddInput('yippe', {
-    Default = 0.1,
-    Numeric = true,
-    Finished = true,
-
-    Text = 'Vertical Prediction (Y)',
-    Tooltip = '',
-
-    Placeholder = 0.1,
-
-    Callback = function(v237)
-        local v238 = 1068 - (728 + 340);
+end});
+v113:Textbox({["Name"]="Vertical Prediction (Y)",["Default"]=(1383.1 - (1262 + 121)),["Callback"]=function(v237)
+	local v238 = 1068 - (728 + 340);
 	while true do
 		if (v238 == (1790 - (816 + 974))) then
 			v10.Tech.VerticalPrediction2 = tonumber(v237) or (0.1 - 0);
@@ -1515,58 +1209,21 @@ Calc:AddInput('yippe', {
 			break;
 		end
 	end
-    end
-})
-Calc:AddInput('yippe', {
-    Default = v10.Tech.jumpoffset2,
-    Numeric = true,
-    Finished = true,
-
-    Text = 'Jump offset',
-    Tooltip = '',
-
-    Placeholder = v10.Tech.jumpoffset2,
-
-    Callback = function(v237)
-        v10.Tech.jumpoffset2 = v237
-    end
-})
-Calc:AddInput('yippe', {
-    Default = v10.Tech.jumpoffset3,
-    Numeric = true,
-    Finished = true,
-
-    Text = 'Fall offset',
-    Tooltip = '',
-
-    Placeholder = v10.Tech.jumpoffset3,
-
-    Callback = function(v237)
-        v10.Tech.jumpoffset3 = v237
-    end
-})
-Calc:AddToggle('idkk', {
-    Text = 'Visualize',
-    Default = false,
-    Tooltip = '',
-    Callback = function(Value)
-        v10.Tech.VelocityDot = Value
-    end
-})
-Calc:AddToggle('idkk', {
-    Text = 'Resolver',
-    Default = false,
-    Tooltip = '',
-    Callback = function(Value)
-        v10.Tech.ResolverEnabled = Value
-    end
-})
-Calc:AddToggle('idkk', {
-    Text = 'Auto Prediction',
-    Default = false,
-    Tooltip = '',
-    Callback = function(v247)
-        	local v248 = 0 - 0;
+end});
+v113:Textbox({["Name"]="Jump offset",["Default"]=v10.Tech.jumpoffset2,["Callback"]=function(v239)
+	v10.Tech.jumpoffset2 = tonumber(v239);
+end});
+v113:Textbox({["Name"]="Fall offset",["Default"]=v10.Tech.jumpoffset3,["Callback"]=function(v241)
+	v10.Tech.jumpoffset3 = tonumber(v241);
+end});
+v113:Toggle({["Name"]="Visualize",["Callback"]=function(v243)
+	v10.Tech.VelocityDot = v243;
+end});
+v113:Toggle({["Name"]="Resolver",["Callback"]=function(v245)
+	v10.Tech.ResolverEnabled = v245;
+end});
+v113:Toggle({["Name"]="Auto Prediction",["Callback"]=function(v247)
+	local v248 = 0 - 0;
 	while true do
 		if (v248 == (0 - 0)) then
 			v10.Tech.AutoPrediction = v247;
@@ -1578,35 +1235,15 @@ Calc:AddToggle('idkk', {
 			break;
 		end
 	end
-    end
-})
-Calc:AddDropdown('ssshsh', {
-    Values = {"Default","Math Based","Sets Based","Calculate"},
-    Default = 4,
-    Multi = false,
-
-    Text = 'Auto Predicition Mode',
-    Tooltip = '',
-
-    Callback = function(Value)
-         v10.Tech.APMODE = Value
-    end
-})
-Calc:AddDropdown('ssshsh', {
-    Values = {"Recalculate","MoveDirection","LookVector"},
-    Default = 2,
-    Multi = false,
-
-    Text = 'Resolver Method',
-    Tooltip = '',
-
-    Callback = function(Value)
-v10.Tech.RESOLVER = Value
-    end
-})
-Movementa:AddButton({
-	Text = 'Load Speed',
-	Func = function()
+end});
+v113:List({["Name"]="Auto Prediction Mode",["Options"]={"Default","Math Based","Sets Based","Calculate"},["Default"]=v10.Tech.APMODE,["Callback"]=function(v249)
+	v10.Tech.APMODE = v249;
+end});
+v113:List({["Name"]="Resolver Method",["Options"]={"Recalculate","MoveDirection","LookVector"},["Default"]="MoveDirection",["Callback"]=function(v251)
+	v10.Tech.RESOLVER = v251;
+end});
+local v114 = v109:Section({["Name"]="Movement",["Side"]="Right",["Size"]=220});
+v114:Button({["Name"]="Load Speed",["Callback"]=function()
 	local v253 = 0 + 0;
 	local v254;
 	while true do
@@ -1615,7 +1252,7 @@ Movementa:AddButton({
 			while true do
 				if (v254 == 0) then
 					if Macro22 then
-						Library:Notify("Already Loaded.", 3);
+						v8:Notification("Already Loaded.", 3);
 						return;
 					end
 					Macro22 = true;
@@ -1631,18 +1268,13 @@ Movementa:AddButton({
 			break;
 		end
 	end
-	end,
-	DoubleClick = false,
-	Tooltip = ''
-})
-Movementa:AddButton({
-	Text = 'Load Fly',
-	Func = function()
+end});
+v114:Button({["Name"]="Load Fly",["Callback"]=function()
 	if Macro2 then
 		local v406 = 0 + 0;
 		while true do
 			if (v406 == (1170 - (943 + 227))) then
-				Library:Notify("Already Loaded.", 2 + 1);
+				v8:Notification("Already Loaded.", 2 + 1);
 				return;
 			end
 		end
@@ -1765,21 +1397,16 @@ Movementa:AddButton({
 			end
 		end
 	end);
-	end,
-	DoubleClick = false,
-	Tooltip = ''
-})
-Movementa:AddButton({
-	Text = 'Load Macro',
-	Func = function()
-		if BitchMac then
+end});
+v114:Button({["Name"]="Load Macro",["Callback"]=function()
+	if BitchMac then
 		local v407 = 384 - (27 + 357);
 		while true do
 			if (v407 == (480 - (91 + 389))) then
 				local v566 = 297 - (90 + 207);
 				while true do
 					if (v566 == (0 + 0)) then
-						Library:Notify("Already Loaded.", 864 - (706 + 155));
+						v8:Notification("Already Loaded.", 864 - (706 + 155));
 						return;
 					end
 				end
@@ -1923,55 +1550,184 @@ Movementa:AddButton({
 			v279();
 		end
 	end
-	end,
-	DoubleClick = false,
-	Tooltip = ''
-})
-Movementa:AddToggle('idkk', {
-    Text = 'Abuse Macro',
-    Default = false,
-    Tooltip = '',
-    Callback = function(Value)
-        MacroV = Value
-    end
-})
-Movementa:AddInput('yippe', {
-    Default = v10.Tech.speedvalue,
-    Numeric = true,
-    Finished = true,
-
-    Text = 'Fly and CFrame Speed',
-    Tooltip = '',
-
-    Placeholder = v10.Tech.speedvalue,
-
-    Callback = function(v237)
-        v10.Tech.speedvalue = v237
-    end
-})
-Movementa:AddInput('yippe', {
-    Default = v10.Tech.MacroSpeed,
-    Numeric = true,
-    Finished = true,
-
-    Text = 'Macro Speed',
-    Tooltip = '',
-
-    Placeholder = v10.Tech.MacroSpeed,
-
-    Callback = function(v237)
-v10.Tech.MacroSpeed = v237
-    end
-})
-locls:AddButton({
-	Text = 'Lock Button',
-	Func = function()
-lockbuttonc()
-	end,
-	DoubleClick = false,
-	Tooltip = ''
-})
-
+end});
+v114:Toggle({["Name"]="Abuse Macro",["Callback"]=function(v281)
+	MacroV = v281;
+end});
+v114:Textbox({["Name"]="Fly and CFrame Speed",["Default"]=v10.Tech.speedvalue,["Callback"]=function(v282)
+	v10.Tech.speedvalue = tonumber(v282);
+end});
+v114:Textbox({["Name"]="Macro Speed",["Default"]=v10.Tech.MacroSpeed,["Callback"]=function(v284)
+	v10.Tech.MacroSpeed = tonumber(v284);
+end});
+local v115 = v109:Section({["Name"]="Load",["Side"]="Left",["Size"]=80});
+v115:Button({["Name"]="Lock Button",["Callback"]=function()
+	local v286 = 1351 - (461 + 890);
+	local v287;
+	local v288;
+	local v289;
+	local v290;
+	local v291;
+	local v292;
+	local v293;
+	while true do
+		if (v286 == (2 + 0)) then
+			v288.Parent = game.CoreGui;
+			v288.ZIndexBehavior = Enum.ZIndexBehavior.Sibling;
+			v288.ResetOnSpawn = false;
+			v289 = Instance.new("ImageButton");
+			v289.Name = "ImageButton";
+			v289.Parent = v288;
+			v286 = 11 - 8;
+		end
+		if (v286 == (244 - (19 + 224))) then
+			v287.Filled = false;
+			v287.Radius = 227 + 23;
+			v287.Position = Vector2.new(workspace.CurrentCamera.ViewportSize.X / (200 - (37 + 161)), workspace.CurrentCamera.ViewportSize.Y / (1 + 1));
+			v287.Visible = false;
+			v288 = Instance.new("ScreenGui");
+			v288.Name = "Sigmaballs";
+			v286 = 1 + 1;
+		end
+		if (5 == v286) then
+			function v292()
+				local v536;
+				local v537 = math.huge;
+				local v538 = game.Players.LocalPlayer;
+				local v539 = game:GetService("Workspace").CurrentCamera;
+				local v540 = Vector2.new(v539.ViewportSize.X / 2, v539.ViewportSize.Y / (2 + 0));
+				local v541 = v287.Radius;
+				local v542 = v539.ViewportSize;
+				for v568, v569 in pairs(game.Players:GetPlayers()) do
+					if ((v569 ~= v538) and v569.Character and v569.Character:FindFirstChild("Humanoid") and (v569.Character.Humanoid.Health > 0) and v569.Character:FindFirstChild("HumanoidRootPart")) then
+						local v633 = 61 - (60 + 1);
+						local v634;
+						local v635;
+						while true do
+							if (v633 == (923 - (826 + 97))) then
+								v634, v635 = v539:WorldToViewportPoint(v569.Character.PrimaryPart.Position);
+								if (v635 and (v634.X > (0 + 0)) and (v634.Y > (0 - 0)) and (v634.X < v542.X) and (v634.Y < v542.Y)) then
+									local v729 = (Vector2.new(v634.X, v634.Y) - v540).magnitude;
+									if ((v729 < v541) and (v729 < v537)) then
+										local v747 = 0 - 0;
+										while true do
+											if (0 == v747) then
+												v536 = v569;
+												v537 = v729;
+												break;
+											end
+										end
+									end
+								end
+								break;
+							end
+						end
+					end
+				end
+				return v536;
+			end
+			v293 = nil;
+			function v293()
+				if v16.Enabled then
+					local v595 = 685 - (375 + 310);
+					local v596;
+					while true do
+						if (v595 == (1999 - (1864 + 135))) then
+							v596 = v292();
+							if (v29 and v30) then
+								local v710 = 0 - 0;
+								while true do
+									if (v710 == 1) then
+										targetHealth = nil;
+										game.Players.LocalPlayer.Character.Humanoid.AutoRotate = true;
+										v710 = 1 + 1;
+									end
+									if (v710 == (2 + 1)) then
+										if v16.LookAt then
+											v28.Character.Humanoid.AutoRotate = true;
+										end
+										v289.Image = "rbxassetid://140623923630784";
+										v710 = 9 - 5;
+									end
+									if (v710 == (1135 - (314 + 817))) then
+										v8:Notification("Untargeted", 2);
+										break;
+									end
+									if (0 == v710) then
+										CamTarget = nil;
+										v29 = false;
+										v710 = 1 + 0;
+									end
+									if (v710 == (216 - (32 + 182))) then
+										v30 = nil;
+										v22.CurrentCamera.CameraSubject = v28.Character.Humanoid;
+										v710 = 3;
+									end
+								end
+							elseif v596 then
+								v29 = true;
+								v30 = v596;
+								CamTarget = v596;
+								if (v30.Character and v30.Character:FindFirstChild("Humanoid")) then
+									targetHealth = v30.Character.Humanoid.Health;
+								else
+									return;
+								end
+								v289.Image = "rbxassetid://96086736054343";
+								v8:Notification("Target Locked: <font color='" .. v100 .. "'>" .. tostring(v30.DisplayName) .. "</font>", 2);
+							else
+								v8:Notification("No target found", 2 + 0);
+							end
+							break;
+						end
+					end
+				end
+			end
+			v289.MouseButton1Click:Connect(v293);
+			v18.InputBegan:Connect(function(v543, v544)
+				if (not v544 and (v543.KeyCode == Enum.KeyCode.DPadDown)) then
+					v293();
+				end
+			end);
+			break;
+		end
+		if (v286 == (0 - 0)) then
+			if LockBut then
+				local v570 = 65 - (39 + 26);
+				while true do
+					if (v570 == (144 - (54 + 90))) then
+						v8:Notification("Already Fucking Loaded", 200 - (45 + 153));
+						return;
+					end
+				end
+			end
+			LockBut = true;
+			v287 = Drawing.new("Circle");
+			v287.Transparency = 0.5;
+			v287.Thickness = 2 + 0;
+			v287.Color = Color3.new(553 - (457 + 95), 0 + 0, 0);
+			v286 = 1 - 0;
+		end
+		if (v286 == (6 - 3)) then
+			v289.Active = true;
+			v289.Draggable = true;
+			v289.BackgroundColor3 = Color3.fromRGB(20, 20, 72 - 52);
+			v289.BackgroundTransparency = 0.5;
+			v289.Size = UDim2.new(0 + 0, 310 - 220, 0, 271 - 181);
+			v289.Image = "rbxassetid://96086736054343";
+			v286 = 752 - (485 + 263);
+		end
+		if (v286 == (711 - (575 + 132))) then
+			v289.Position = UDim2.new(861.5 - (750 + 111), -(1035 - (445 + 565)), 0.5 + 0, -25);
+			v290 = Instance.new("UICorner");
+			v290.CornerRadius = UDim.new(0.2 + 0, 0 - 0);
+			v290.Parent = v289;
+			v291 = false;
+			v292 = nil;
+			v286 = 2 + 3;
+		end
+	end
+end});
 local v19 = game:GetService("Players");
 local v75 = workspace.CurrentCamera;
 local v116 = v19.LocalPlayer;
@@ -2032,15 +1788,10 @@ function GetClosestToMouse()
 	end
 	return v294;
 end
-locls:AddLabel('Lock Keybind'):AddKeyPicker('TogglePc', {
-    Default = 'E',
-    SyncToggleState = false,
-    Mode = 'Toggle',
-    Text = 'Lock Keybind',
-    NoUI = true
-})
+v115:Keybind({["Name"]="Lock Keybind",["Flag"]="Lock Keybind",["UseKey"]=true,["Default"]=Enum.KeyCode.Q,["Callback"]=function(v296)
+	TargLockBind = v296;
+end});
 local function v118()
-pcall(function()
 	local v297 = 1091 - (1035 + 56);
 	local v298;
 	while true do
@@ -2063,7 +1814,7 @@ pcall(function()
 							v636 = 1 + 1;
 						end
 						if (v636 == (7 - 4)) then
-							Library:Notify("Untargeted", 2 + 0);
+							v8:Notification("Untargeted", 2 + 0);
 							break;
 						end
 						if (v636 == (1049 - (179 + 870))) then
@@ -2075,7 +1826,7 @@ pcall(function()
 				else
 					v29 = true;
 					v30 = v298;
-					Library:Notify("Target Locked: "..tostring(v30.DisplayName), 880 - (827 + 51));
+					v8:Notification("Target Locked: <font color='" .. v100 .. "'>" .. tostring(v30.DisplayName) .. "</font>", 880 - (827 + 51));
 					if (v30 and v30.Character and v30.Character:FindFirstChild("Humanoid")) then
 						targetHealth = v30.Character.Humanoid.Health;
 					else
@@ -2086,22 +1837,22 @@ pcall(function()
 			break;
 		end
 	end
-	end)
 end
-Options.TogglePc:OnClick(function()
-    v118()
-end)
-as:AddButton({
-	Text = 'Auto Shoot Button',
-	Func = function()
-		local v301 = 0 + 0;
+v18.InputBegan:Connect(function(v299, v300)
+	if (not v300 and (v299.KeyCode == TargLockBind)) then
+		v118();
+	end
+end);
+local v119 = v109:Section({["Name"]="AutoShoot",["Side"]="Right",["Size"]=(132 - 82)});
+v119:Button({["Name"]="Auto Shoot Button",["Callback"]=function()
+	local v301 = 0 + 0;
 	while true do
 		if (v301 == 0) then
 			if AutoShootButton then
 				local v571 = 0;
 				while true do
 					if (v571 == (473 - (95 + 378))) then
-						Library:Notify("Already Loaded.", 1 + 2);
+						v8:Notification("Already Loaded.", 1 + 2);
 						return;
 					end
 				end
@@ -2116,16 +1867,10 @@ as:AddButton({
 			break;
 		end
 	end
-	end,
-	DoubleClick = false,
-	Tooltip = ''
-})
+end});
 local v120 = 0.0001;
-hc:AddToggle('idkk', {
-    Text = 'Rapid Fire',
-    Default = false,
-    Tooltip = '',
-    Callback = function(v302)
+local v121 = v109:Section({["Name"]="Hood Custom",["Side"]="Left",["Zindex"]=2});
+v121:Toggle({["Name"]="Fire Rate",["Callback"]=function(v302)
 	local v303 = 0 - 0;
 	while true do
 		if (v303 == 0) then
@@ -2162,105 +1907,36 @@ hc:AddToggle('idkk', {
 			break;
 		end
 	end
-    end
-})
-hc:AddInput('yippe', {
-    Default = v120,
-    Numeric = true,
-    Finished = true,
-
-    Text = 'Gun Delay',
-    Tooltip = '',
-
-    Placeholder = v120,
-
-    Callback = function(v237)
-        v120 = v237
-    end
-})
-mainas:AddToggle('idkk', {
-    Text = 'Enabled',
-    Default = false,
-    Tooltip = '',
-    Callback = function(Value)
-        v10.Tech.Camera = Value
-    end
-})
-mainas:AddToggle('idkk', {
-    Text = 'Flick',
-    Default = false,
-    Tooltip = '',
-    Callback = function(Value)
-        Flick = Value
-    end
-})
-mainas:AddToggle('idkk', {
-    Text = 'Division',
-    Default = false,
-    Tooltip = '',
-    Callback = function(Value)
-        v10.Tech.UseExternal = Value
-    end
-})
-mainas:AddToggle('idkk', {
-    Text = 'Resolver',
-    Default = false,
-    Tooltip = '',
-    Callback = function(Value)
-        v10.Tech.CamResolverEnabled = Value
-    end
-})
-mainas:AddInput('yippe', {
-    Default = v10.Tech.smoothness,
-    Numeric = true,
-    Finished = true,
-
-    Text = 'Camera Smoothness',
-    Tooltip = '',
-
-    Placeholder = v10.Tech.smoothness,
-
-    Callback = function(v237)
-        v10.Tech.smoothness = v237
-    end
-})
-mainas:AddDropdown('ssshsh', {
-    Values = {"Linear","Quad","Cubic","Quart","Quint","Sine","Exponential","Circular","Back","Bounce","Elastic"},
-    Default = 6,
-    Multi = false,
-
-    Text = 'Easing Style',
-    Tooltip = '',
-
-    Callback = function(Value)
-         v10.Tech.easingStyle = Value
-    end
-})
-mainas:AddDropdown('ssshsh', {
-    Values = {"In","Out","InOut"},
-    Default = 2,
-    Multi = false,
-
-    Text = 'Easing Direction',
-    Tooltip = '',
-
-    Callback = function(Value)
-         v10.Tech.easingDirection = Value
-    end
-})
+end});
+v121:Textbox({["Name"]="Gun Delay",["Default"]=tostring(v120),["Callback"]=function(v304)
+	v120 = tonumber(v304);
+end});
+local v122 = v107:Section({["Name"]="Main",["Size"]=(413 - 193)});
+v122:Toggle({["Name"]="Enabled",["Callback"]=function(v305)
+	v10.Tech.Camera = v305;
+end});
+v122:Toggle({["Name"]="Flick",["Callback"]=function(v307)
+	Flick = v307;
+end});
+v122:Toggle({["Name"]="Division",["Callback"]=function(v308)
+	v10.Tech.UseExternal = v308;
+end});
+v122:Toggle({["Name"]="Resolver",["Callback"]=function(v310)
+	v10.Tech.CamResolverEnabled = v310;
+end});
+v122:Textbox({["Name"]="Camera Smoothness",["Default"]=tostring(v10.Tech.smoothness),["Callback"]=function(v312)
+	v10.Tech.smoothness = tonumber(v312);
+end});
+v122:List({["Name"]="Easing Style",["Options"]={"Linear","Quad","Cubic","Quart","Quint","Sine","Exponential","Circular","Back","Bounce","Elastic"},["Default"]=v10.Tech.easingStyle,["Callback"]=function(v314)
+	v10.Tech.easingStyle = v314;
+end});
+v122:List({["Name"]="Easing Direction",["Options"]={"In","Out","InOut"},["Default"]=v10.Tech.easingDirection,["Callback"]=function(v316)
+	v10.Tech.easingDirection = v316;
+end});
 local v123 = 0.1 + 0;
 local v124 = 0.1 - 0;
-predas:AddInput('yippe', {
-    Default = (505.1 - (223 + 282)),
-    Numeric = true,
-    Finished = true,
-
-    Text = 'Horizontal Prediction',
-    Tooltip = '',
-
-    Placeholder = (505.1 - (223 + 282)),
-
-    Callback = function(v318)
+local v125 = v107:Section({["Name"]="Prediction",["Side"]="Right",["Size"]=(4 + 156)});
+v125:Textbox({["Name"]="Horizontal Prediction",["Default"]=(505.1 - (223 + 282)),["Callback"]=function(v318)
 	local v319 = 0 + 0;
 	while true do
 		if (v319 == 1) then
@@ -2274,76 +1950,33 @@ predas:AddInput('yippe', {
 			v319 = 671 - (623 + 47);
 		end
 	end
-    end
-})
-predas:AddInput('yippe', {
-    Default = (45.1 - (32 + 13)),
-    Numeric = true,
-    Finished = true,
-
-    Text = 'Vertical Prediction',
-    Tooltip = '',
-
-    Placeholder = (45.1 - (32 + 13)),
-
-    Callback = function(v320)
+end});
+v125:Textbox({["Name"]="Vertical Prediction",["Default"]=(45.1 - (32 + 13)),["Callback"]=function(v320)
 	v123 = tonumber(v320);
 	task.wait(0.01 + 0);
 	v10.Tech.CamPrediction2 = v123;
 	v10.Tech.CamPrediction1 = v124;
-    end
-})
-predas:AddToggle('idkk', {
-    Text = 'Auto Pred',
-    Default = false,
-    Tooltip = '',
-    Callback = function(v323)
+end});
+v125:Toggle({["Name"]="AutoPred",["Callback"]=function(v323)
 	v10.Tech.CamAutoprediction = v323;
 	v10.Tech.CamPrediction2 = v123;
 	v10.Tech.CamPrediction1 = v124;
-    end
-})
-predbreak:AddToggle('idkk', {
-    Text = 'Jump Prediction',
-    Default = false,
-    Tooltip = '',
-    Callback = function(Value)
-        v10.Tech.Camera = Value
-    end
-})
-predbreak:AddToggle('idkk', {
-    Text = 'Enable Anti Lock',
-    Default = false,
-    Tooltip = '',
-    Callback = function(Value)
-        v10.Tech.Camera = Value
-    end
-})
-predbreak:AddToggle('idkk', {
-    Text = 'Anti Network',
-    Default = false,
-    Tooltip = '',
-    Callback = function(Value)
-        v10.Tech.Camera = Value
-    end
-})
-predbreak:AddDropdown('ssshsh', {
-    Values = {"Shake","Behind","Down","Forward","Left","One","Right","Up","Zero"},
-    Default = 2,
-    Multi = false,
-
-    Text = 'Anti Lock Type',
-    Tooltip = '',
-
-    Callback = function(Value)
-         v78 = Value
-    end
-})
-skybox:AddToggle('idkk', {
-    Text = 'Skybox Enabled',
-    Default = false,
-    Tooltip = '',
-    Callback = function(v332)
+end});
+local v126 = v108:Section({["Name"]="Prediction Breaker",["Side"]="Left",["Size"]=(114 + 26)});
+v126:Toggle({["Name"]="Jump Prediction",["Callback"]=function(v327)
+	v10.Tech.JumpBreak = v327;
+end});
+v126:Toggle({["Name"]="Enable Anti Lock",["Callback"]=function(v329)
+	v77 = v329;
+end});
+v126:Toggle({["Name"]="Anti Network",["Callback"]=function(v330)
+	desyncsleep = v330;
+end});
+v126:List({["Name"]="Anti Lock Type",["Options"]={"Shake","Behind","Down","Forward","Left","One","Right","Up","Zero"},["Default"]=v78,["Callback"]=function(v331)
+	v78 = v331;
+end});
+local v127 = v108:Section({["Name"]="SkyBox",["Side"]="Right",["Size"]=130});
+v127:Toggle({["Name"]="Skybox Enabled",["Callback"]=function(v332)
 	local v333 = 0;
 	while true do
 		if (v333 == (0 + 0)) then
@@ -2352,17 +1985,8 @@ skybox:AddToggle('idkk', {
 			break;
 		end
 	end
-    end
-})
-skybox:AddDropdown('ssshsh', {
-    Values = {"1","2","3","4","5","6","7"},
-    Default = 2,
-    Multi = false,
-
-    Text = 'Skybox Type',
-    Tooltip = '',
-
-    Callback = function(v334)
+end});
+v127:List({["Name"]="Skybox Type",["Options"]={"1","2","3","4","5","6","7"},["Default"]="1",["Callback"]=function(v334)
 	local v335 = 557 - (395 + 162);
 	while true do
 		if (v335 == (0 + 0)) then
@@ -2371,16 +1995,11 @@ skybox:AddDropdown('ssshsh', {
 			break;
 		end
 	end
-    end
-})
-skybox:AddButton({
-	Text = 'Change',
-	Func = function()
-changeSkybox();
-	end,
-	DoubleClick = false,
-	Tooltip = ''
-})
+end});
+v127:Button({["Name"]="Change",["Callback"]=function()
+	changeSkybox();
+end});
+local v128 = v108:Section({["Name"]="Dance",["Side"]="Left",["Size"]=140});
 local v129 = {["Misc"]={["Animation"]={["Enabled"]=false,["SelectedDance"]="Floss",["Speed"]=(1943 - (816 + 1125))}}};
 local v130 = game.Players.LocalPlayer;
 local v131 = {["Floss"]=(11625203662 - 910863119)};
@@ -2412,38 +2031,14 @@ local function v133(v336, v337)
 		end
 	end
 end
-dace:AddSlider('MySlider', {
-	Text = 'Speed',
-	Default = v129.Misc.Animation.Speed,
-	Min = 0,
-	Max = 10,
-	Rounding = 1,
-	Compact = false,
-
-	Callback = function(Value)
-		v129.Misc.Animation.Speed = Value
-	end,
-
-	Visible = true
-})
-dace:AddDropdown('ssshsh', {
-    Values = {"Floss","None"},
-    Default = 1,
-    Multi = false,
-
-    Text = 'Dance',
-    Tooltip = '',
-
-    Callback = function(v334)
-	v129.Misc.Animation.SelectedDance = v334
-    end
-})
-dace:AddToggle('idkk', {
-    Text = 'Animate',
-    Default = false,
-    Tooltip = '',
-    Callback = function(v344)
-        	local v345 = 0 + 0;
+v128:Slider({["Name"]="Speed",["Min"]=(0 + 0),["Max"]=(6 + 4),["Default"]=v129.Misc.Animation.Speed,["Suffix"]="",["Decimals"]=(0.001 - 0),["Callback"]=function(v340)
+	v129.Misc.Animation.Speed = v340;
+end});
+v128:List({["Name"]="Dance",["Options"]={"Floss","None"},["Default"]="Floss",["Callback"]=function(v342)
+	v129.Misc.Animation.SelectedDance = v342;
+end});
+v128:Toggle({["Name"]="Animate",["Callback"]=function(v344)
+	local v345 = 0 + 0;
 	while true do
 		if (v345 == (0 - 0)) then
 			v129.Misc.Animation.Enabled = v344;
@@ -2472,13 +2067,37 @@ dace:AddToggle('idkk', {
 			break;
 		end
 	end
-    end
-})
-espa:AddToggle('idkk', {
-    Text = 'Highlight',
-    Default = false,
-    Tooltip = '',
-    Callback = function(Value)
-        HighlightEnabled = Value
-    end
-})
+end});
+local v134 = v108:Section({["Name"]="ESP",["Side"]="Right",["Size"]=(66 - 26)});
+v134:Toggle({["Name"]="Highlight",["Callback"]=function(v346)
+	HighlightEnabled = v346;
+end});
+v8:SetOpen(false);
+local v135 = Instance.new("ScreenGui");
+v135.Name = "Ui22";
+v135.Parent = game.CoreGui;
+v135.ZIndexBehavior = Enum.ZIndexBehavior.Sibling;
+v135.ResetOnSpawn = false;
+local v142 = Instance.new("ImageButton");
+v142.Name = "Image3";
+v142.Parent = v135;
+v142.Active = true;
+v142.Draggable = true;
+v142.BackgroundColor3 = Color3.fromRGB(1279 - (1147 + 112), 5 + 15, 40 - 20);
+v142.BackgroundTransparency = 1;
+v142.Size = UDim2.new(0, 90, 0, 24 + 66);
+v142.Image = "rbxassetid://92324433288253";
+v142.Position = UDim2.new(698 - (335 + 362), -(90 + 5), 0 - 0, 5);
+local v152 = Instance.new("UICorner");
+v152.CornerRadius = UDim.new(0.2, 0);
+v152.Parent = v142;
+v142.MouseButton1Click:Connect(function()
+	local v347 = 0;
+	while true do
+		if (v347 == (0 - 0)) then
+			Open = not Open;
+			v8:SetOpen(Open);
+			break;
+		end
+	end
+end);
