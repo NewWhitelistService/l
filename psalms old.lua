@@ -1336,7 +1336,7 @@ Library:Toggle()
 end);
 
 local Window = Library:CreateWindow({
-    Title = 'Psalms Lite | Change Ui',
+    Title = 'Psalms Lite | Change Ui by doitenroi.9941',
     Center = true,
     AutoShow = false,
     TabPadding = 8,
@@ -1388,7 +1388,7 @@ Targeta:AddToggle('idkk', {
     Default = false,
     Tooltip = '',
     Callback = function(Value)
-        v10.Tech.View = Value
+        v10.Tech.ViewAt = Value
     end
 })
 Targeta:AddToggle('idkk', {
