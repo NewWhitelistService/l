@@ -676,7 +676,7 @@ v21.PostSimulation:Connect(function()
 					while true do
 						if (v625 == (0 - 0)) then
 							v15 = not v15;
-							setfflag("S2PhysicsSenderRate", 1352 - (540 + 810));
+							setfflag("S2PhysicsSenderRate", tostring(1352 - (540 + 810)));
 							v625 = 3 - 2;
 						end
 						if ((2 - 1) == v625) then
@@ -693,7 +693,7 @@ v21.PostSimulation:Connect(function()
 						end
 						if (v626 == (1881 - (22 + 1859))) then
 							v15 = false;
-							setfflag("S2PhysicsSenderRate", 13);
+							setfflag("S2PhysicsSenderRate", "13");
 							v626 = 1773 - (843 + 929);
 						end
 					end
