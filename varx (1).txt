@@ -1,0 +1,240 @@
+local artemis = {
+    main = {
+        enabled = false,
+        aimlock_key = "q",
+        prediction = 0.1605,
+        aim_part = "Head",
+        notifications = true,
+        smoothing_factor = 0.55
+    }
+}
+local box_settings = {
+    box = {
+        show_box = true,
+        default_size = Vector3.new(0.5, 0.5, 0.5),
+        marker_size = UDim2.new(1, 0, 1, 0),
+        marker_color = Color3.fromRGB(255, 255, 255),
+        dynamic_sizing = true,
+        velocity_divisor = 100,
+        sway_range = 0.2,
+        rotation_range = 0.1
+    }
+}
+local theme = {
+    main = Color3.fromRGB(255, 215, 0) -- Gold color
+}
+local aim_parts_list = {
+    "Head", "UpperTorso", "HumanoidRootPart", "LowerTorso", "LeftHand", "RightHand",
+    "LeftLowerArm", "RightLowerArm", "LeftUpperArm", "RightUpperArm", "LeftFoot",
+    "LeftLowerLeg", "LeftUpperLeg", "RightLowerLeg", "RightFoot", "RightUpperLeg"
+}
+local getcustomasset = getsynasset or getcustomasset or function(location) 
+    return "rbxasset://" .. location 
+end
+local httprequest = (http and http.request or http_request or fluxus and fluxus.request or request or function() end)
+local File1 = httprequest({
+    Url = 'https://cdn.discordapp.com/attachments/1280235920507015299/1298660347829424161/Zonder_titel225_20241020175334.png?ex=671a5f32&is=67190db2&hm=48266f3a6fb9ec056a47f8247beee5ca9124b1105ff8879ba40ab18287852c98&', 
+    Method = 'GET'
+}).Body
+writefile('artemis.png', File1)
+local ui = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Module.Lua"))()
+local notifications = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Client.Lua"))()
+local screen_center = Vector2.new(workspace.CurrentCamera.ViewportSize.X / 2, workspace.CurrentCamera.ViewportSize.Y / 2)
+-- Remove Circle Code
+function neutralize_input(input)
+    local normalized = string.lower(input)
+    for _, part in ipairs(aim_parts_list) do
+        if string.lower(part) == normalized then
+            return part
+        end
+    end
+    return nil
+end
+artemis.main.aim_part = neutralize_input(artemis.main.aim_part)
+function darken_color(color, factor)
+    factor = math.clamp(factor, 0, 1)
+    return Color3.new(color.R * factor, color.G * factor, color.B * factor)
+end
+-- Removed Play Sound Function
+function notify(text, desc)
+    -- Removed Play Sound
+    notifications:Notify(
+        {Title = text, Description = desc},
+        {OutlineColor = theme.main, Time = 1.5, Type = "default"}
+    )
+end
+local last_position = nil
+local box = Instance.new("MeshPart", game.Workspace)
+box.MeshId = "rbxassetid://6416975534"
+box.TextureID = "rbxthumb://type=Asset&id=2898709761&w=420&h=420"
+box.Material = Enum.Material.ForceField
+box.Color = Color3.new(1, 1, 1)
+box.Transparency = 0
+local highlight = Instance.new("Highlight")
+highlight.FillColor = theme.main
+highlight.Parent = game.CoreGui
+highlight.OutlineTransparency = 0
+highlight.OutlineColor = Color3.new(1, 1, 1)
+highlight.FillTransparency = 0
+sethiddenproperty(highlight, "LineThickness", 1)
+local ACTION_AIMLOCK = "Aimlock"
+local INPUT_AIMLOCK = Enum.KeyCode[string.upper(artemis.main.aimlock_key)]
+local Mouse = game.Players.LocalPlayer:GetMouse()
+local ContextActionService = game:GetService("ContextActionService")
+function make_marker(parent, adornee, color, size, size2)
+    local box = Instance.new("BillboardGui", parent)
+    box.Name = "box_of_artemis"
+    box.Adornee = adornee
+    box.Size = UDim2.new(size, size2, size, size2)
+    box.AlwaysOnTop = true
+    local a = Instance.new("Frame", box)
+    a.Size = box_settings.box.marker_size
+    a.BackgroundColor3 = color
+    local g = Instance.new("UICorner", a)
+    g.CornerRadius = UDim.new(50, 25)
+    return box
+end
+local player
+Mouse.KeyDown:Connect(function(key_pressed)
+    if key_pressed == artemis.main.aimlock_key then
+        if artemis.main.enabled then
+            artemis.main.enabled = false
+            if artemis.main.notifications then
+                player = find_closest_player()
+                notify("VARX", "Unlocked.") -- Changed Notification Title
+            end
+        else
+            player = find_closest_player()
+            artemis.main.enabled = true
+            if artemis.main.notifications then
+                notify("VARX", "Currently locked on: " .. tostring(player.Character.Humanoid.DisplayName)) -- Changed Notification Title
+            end
+        end
+    end
+end)
+local function toggle_aimlock(actionName, inputState, _inputObject)
+    if inputState == Enum.UserInputState.Begin then
+        if artemis.main.enabled then
+            artemis.main.enabled = false
+            if artemis.main.notifications then
+                player = find_closest_player_from_center()
+                notify("VARX", "Unlocked.") -- Changed Notification Title
+            end
+        else
+            player = find_closest_player_from_center()
+            artemis.main.enabled = true
+            if artemis.main.notifications then
+                notify("VARX", "Currently locked on: " .. tostring(player.Character.Humanoid.DisplayName)) -- Changed Notification Title
+            end
+        end
+    end
+end
+ContextActionService:BindAction(ACTION_AIMLOCK, toggle_aimlock, true, INPUT_AIMLOCK)
+ContextActionService:SetImage(ACTION_AIMLOCK, getcustomasset("artemis.png"))
+ContextActionService:SetTitle(ACTION_AIMLOCK, "VARX.CC") -- Changed Title
+ContextActionService:SetDescription(ACTION_AIMLOCK, "Lock onto a target")
+ContextActionService:SetPosition(ACTION_AIMLOCK, UDim2.new(0, 0, 0, 0))
+local players = game.Players:GetPlayers()
+function fixate(target_player)
+    local handler = make_marker(guimain, target_player.Character:WaitForChild(artemis.main.aim_part),
+        Color3.fromRGB(107, 184, 255), 0.10, 8)
+    handler.Name = target_player.Name
+    target_player.CharacterAdded:connect(function(char)
+        handler.Adornee = char:WaitForChild("HumanoidRootPart")
+    end)
+end
+for _, p in ipairs(players) do
+    if p ~= game.Players.LocalPlayer then
+        fixate(p)
+    end
+end
+game.Players.PlayerAdded:connect(function(p)
+    fixate(p)
+end)
+spawn(function()
+    box.Anchored = true
+    box.CanCollide = false
+    box.Size = box_settings.box.default_size
+    box.Color = box_settings.box.marker_color    
+    box.Transparency = box_settings.box.show_box and 0 or 1
+    make_marker(box, box, box_settings.box.marker_color, 0.40, 1)
+end)
+function adjust_box_size(target_player)
+    local base_size = box_settings.box.default_size
+    if box_settings.box.dynamic_sizing then
+        local velocity = target_player.Character.HumanoidRootPart.Velocity.magnitude
+        local size_increase = math.clamp(velocity / box_settings.box.velocity_divisor, 0, 1)
+        return base_size + Vector3.new(size_increase, size_increase, size_increase)
+    else
+        return base_size
+    end
+end
+function find_closest_player()
+    local closest_player
+    local shortest_distance = 300
+    for _, p in pairs(game.Players:GetPlayers()) do
+        if p ~= game.Players.LocalPlayer and p.Character and p.Character:FindFirstChild("Humanoid") and
+            p.Character.Humanoid.Health ~= 0 and p.Character:FindFirstChild("HumanoidRootPart") then
+            local pos = game:GetService("Workspace").CurrentCamera:WorldToViewportPoint(p.Character.PrimaryPart.Position)
+            local magnitude = (Vector2.new(pos.X, pos.Y) -
+                                  Vector2.new(game.Players.LocalPlayer:GetMouse().X,
+                    game.Players.LocalPlayer:GetMouse().Y)).magnitude
+            if magnitude < shortest_distance then
+                closest_player = p
+                shortest_distance = magnitude
+            end
+        end
+    end
+    return closest_player
+end
+function find_closest_player_from_center()
+    local closest_player
+    local shortest_distance = 300
+    local screen_center = Vector2.new(game:GetService("Workspace").CurrentCamera.ViewportSize.X / 2, game:GetService("Workspace").CurrentCamera.ViewportSize.Y / 2)
+    for _, p in pairs(game.Players:GetPlayers()) do
+        if p ~= game.Players.LocalPlayer and p.Character and p.Character:FindFirstChild("Humanoid") and
+            p.Character.Humanoid.Health ~= 0 and p.Character:FindFirstChild("HumanoidRootPart") then
+            local pos = game:GetService("Workspace").CurrentCamera:WorldToViewportPoint(p.Character.PrimaryPart.Position)
+            local magnitude = (Vector2.new(pos.X, pos.Y) - screen_center).magnitude
+            if magnitude < shortest_distance then
+                closest_player = p
+                shortest_distance = magnitude
+            end
+        end
+    end
+    return closest_player
+end
+game:GetService("RunService").Stepped:Connect(function()
+    if artemis.main.enabled and player and player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
+        local target_part = player.Character:FindFirstChild(artemis.main.aim_part)
+        if target_part then
+            local predicted = target_part.Position + (target_part.Velocity * artemis.main.prediction)
+            if last_position then
+                predicted = last_position:Lerp(predicted, artemis.main.smoothing_factor)
+            else
+                last_position = predicted
+            end
+            last_position = predicted
+            local sway_offset = Vector3.new(math.random(-box_settings.box.sway_range, box_settings.box.sway_range), math.random(-box_settings.box.sway_range, box_settings.box.sway_range), math.random(-box_settings.box.sway_range, box_settings.box.sway_range)) + Vector3.new(math.random(-box_settings.box.rotation_range, box_settings.box.rotation_range), math.random(-box_settings.box.rotation_range, box_settings.box.rotation_range), math.random(-box_settings.box.rotation_range, box_settings.box.rotation_range))
+            box.CFrame = CFrame.new(predicted + sway_offset) * CFrame.Angles(0, tick() * 0.5, 0)
+            box.Size = adjust_box_size(player)
+            local transpar = math.sin(workspace.DistributedGameTime * math.pi * 2) * 0.5 + 0.5
+            highlight.Adornee = player.Character
+            highlight.FillTransparency = transpar
+        end
+    else
+        highlight.Adornee = game.CoreGui
+        box.CFrame = CFrame.new(9e9, 9e9, 9e9)
+    end
+end)
+local mt = getrawmetatable(game)
+local old_namecall = mt.__namecall
+setreadonly(mt, false)
+mt.__namecall = newcclosure(function(...)
+    local args = {...}
+    if artemis.main.enabled and getnamecallmethod() == "FireServer" and args[2] == "UpdateMousePos" then
+        args[3] = box.Position
+        return old_namecall(unpack(args))
+    end
+    return old_namecall(...)
+end)
