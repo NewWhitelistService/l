@@ -1,0 +1,10 @@
+return {
+    "UpdateMousePos",
+    "MousePos",
+    "MOUSE",
+    "UpdateMousePosI2",
+    "PosMouseUpdate",
+    "MousePosUpdate",
+    "MoonUpdateMousePos",
+    "UpdateAim"
+}
